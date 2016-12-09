@@ -1,0 +1,15 @@
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    l0 = log --color --graph --decorate --pretty=oneline --abbrev-commit --date-order
+    l1 = log --color --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l2 = log --all --color --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    df = diff --color
+[user]
+	email = supergui@live.cn
+    name = supergui
+
+[diff]
+    tool = vimdiff
