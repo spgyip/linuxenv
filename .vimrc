@@ -17,39 +17,26 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" your own plugins...{
-
-" clang_complete {
-" Plugin 'Rip-Rip/clang_complete'
-" }`
-
-" YouCompleteMe {
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-"let g:ycm_confirm_extra_conf = 1
-"let g:ycm_key_list_select_completion = ['<Enter>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<S-Enter>', '<Up>']
-" }
 
 " fugitive {
 Plugin 'tpope/vim-fugitive'
 " }
 
-"Nerdtree{
+" Nerdtree {
 Plugin 'scrooloose/nerdtree'
-nnoremap nt :NERDTreeToggle<cr>
+nnoremap <Leader>nt :NERDTreeToggle<cr>
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore=['\.d$', '\.o$', '\.a$', '\.pyc$']
-"}
+" }
 
 " Tagbar {
 Plugin 'majutsushi/tagbar'
-nnoremap tb :TagbarToggle<CR>
+nnoremap <Leader>tb :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_sort = 0
-"}
+" }
 
 " snipmate {
 Plugin 'msanders/snipmate.vim'
@@ -57,16 +44,14 @@ Plugin 'msanders/snipmate.vim'
 
 " DoxygenTookit {
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-nnoremap da :DoxAuthor<cr>
-nnoremap dl :DoxLic<cr>
-nnoremap df :Dox<cr>
+nnoremap <Leader>dxa :DoxAuthor<cr>
+nnoremap <Leader>dxl :DoxLic<cr>
+nnoremap <Leader>dx :Dox<cr>
 let g:DoxygenToolkit_authorName="supergui@live.cn"
 " let g:DoxygenToolkit_licenseTag="My own license"
 " }
 
-"}
-
-
+" VimAirline {
 Plugin 'bling/vim-airline'
 let g:airline_section_b='%{strftime("%c")}'
 let g:airline_section_y='BN: %{bufnr("%")}'
@@ -78,6 +63,9 @@ let g:airline#extensions#tabline#show_close_button = 1
 let g:airline#extensions#tabline#close_symbol = 'X'
 
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#bufferline#enabled = 1
+
+
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -90,9 +78,13 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <s-h> :bp<cr>
 nmap <s-l> :bn<cr>
 nmap <s-w> :bd<cr>
+" }
 
+" Ctrlp {
 Plugin 'kien/ctrlp.vim'
+" }
 
+" VimGo {
 Plugin 'fatih/vim-go'
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -100,10 +92,28 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+" let g:go_auto_type_info = 1
+let g:go_updatetime = 300
+" let g:go_snippet_engine = "neosnippet"
 
+au FileType go nmap <Leader>df <Plug>(go-def)
+au FileType go nmap <Leader>dfs <Plug>(go-def-split)
+au FileType go nmap <Leader>dfv <Plug>(go-def-vertical)
 
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>cl <Plug>(go-callers)
+au FileType go nmap <Leader>cle <Plug>(go-callees)
+" }
 
-Plugin 'vim-php/tagbar-phpctags.vim'
+" MRU {
+Plugin 'yegappan/mru'
+
+nmap <Leader>ru :MRU<cr>
+" }
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -169,3 +179,4 @@ nmap <c-k> :resize+1<cr>
 nmap <c-j> :resize-1<cr>
 
 "source ~/.vim/color/Tomorrow-Night-Bright.vim
+"
