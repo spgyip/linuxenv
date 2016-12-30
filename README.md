@@ -12,3 +12,9 @@ vim-go依赖go本身提供的工具进行整合，例如gocode、godef、goimpor
 ```:GoInstallBinaries```
 这些依赖的库会被安装到$GOPATH/bin/
 
+
+安装gotags
+```
+go get -u github.com/jstemmer/gotags
+```
+
