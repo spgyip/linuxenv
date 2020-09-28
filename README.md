@@ -1,20 +1,22 @@
-.vimrc
-.gitconfig
+My personal linux environment.
+-----------------------------
 
-## 其它需要单独安装的插件
-- ctags
-- cscope
+## Basic
 
-## vim-go
-vim-go依赖go本身提供的工具进行整合，例如gocode、godef、goimports等。
+- Homebrew
+- zsh
+- tmux
 
-运行
-```:GoInstallBinaries```
-这些依赖的库会被安装到$GOPATH/bin/
+## Develope
 
+- vim bundle
+- go
+- git
 
-安装gotags
-```
-go get -u github.com/jstemmer/gotags
-```
+## Extention
 
+- autossh
+
+## TODO
+
+Install with one shot like `/bin/sh install`

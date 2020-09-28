@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 
 
 " fugitive {
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 " }
 
 " Nerdtree {
@@ -39,20 +39,25 @@ let g:tagbar_sort = 0
 " }
 
 " snipmate {
-Plugin 'msanders/snipmate.vim'
+" Plugin 'msanders/snipmate.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 " }
 
 " DoxygenTookit {
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-nnoremap <Leader>dxa :DoxAuthor<cr>
-nnoremap <Leader>dxl :DoxLic<cr>
-nnoremap <Leader>dx :Dox<cr>
-let g:DoxygenToolkit_authorName="supergui@live.cn"
+" Plugin 'vim-scripts/DoxygenToolkit.vim'
+" nnoremap <Leader>dxa :DoxAuthor<cr>
+" nnoremap <Leader>dxl :DoxLic<cr>
+" nnoremap <Leader>dx :Dox<cr>
+" let g:DoxygenToolkit_authorName="supergui@live.cn"
 " let g:DoxygenToolkit_licenseTag="My own license"
 " }
 
 " VimAirline {
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_section_b='%{strftime("%c")}'
 let g:airline_section_y='BN: %{bufnr("%")}'
 let g:airline#extensions#tabline#enabled = 1
@@ -81,7 +86,7 @@ nmap <s-w> :bd<cr>
 " }
 
 " Ctrlp {
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 " }
 
 " VimGo {
@@ -92,6 +97,8 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+
 " let g:go_auto_type_info = 1
 let g:go_updatetime = 300
 " let g:go_snippet_engine = "neosnippet"
@@ -112,8 +119,19 @@ au FileType go nmap <Leader>cle <Plug>(go-callees)
 " MRU {
 Plugin 'yegappan/mru'
 
+Plugin 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+
+au FileType rust nmap <Leader>b :Cbuild<cr>
+au FileType rust nmap <Leader>r :Crun<cr>
+au FileType rust nmap <Leader>t :Ctest<cr>
+
 nmap <Leader>ru :MRU<cr>
 " }
+"
+
+" Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
