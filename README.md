@@ -1,7 +1,7 @@
 My personal linux environment.
 -----------------------------
 
-## Basic
+## Requirements
 
 - Homebrew
 - zsh
@@ -17,6 +17,3 @@ My personal linux environment.
 
 - autossh
 
-## TODO
-
-Install with one shot like `/bin/sh install`
