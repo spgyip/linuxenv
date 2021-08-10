@@ -4,7 +4,7 @@ My personal linux environment.
 ## Requirements
 
 - Homebrew
-- zsh
+- zsh & ohmyzsh
 - tmux
 
 ## Develope
